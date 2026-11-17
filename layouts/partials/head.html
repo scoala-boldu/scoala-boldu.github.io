@@ -17,5 +17,7 @@
   {{ end }}
   {{ $styles := resources.Get "scss/main.scss" | toCSS (dict "outputStyle" "compressed") | fingerprint "sha512" }}
   <link rel="stylesheet" href="{{ $styles.RelPermalink }}" integrity="{{ $styles.Data.Integrity }}" media="screen">
-  {{ with resources.Get "images/favicon.svg" }}<link rel="icon" href="{{ .RelPermalink }}" type="image/svg+xml">{{ end }}
+  <link rel="icon" href="{{ "favicon-64.png" | relURL }}" type="image/png">
+  <link rel="apple-touch-icon" href="{{ "apple-touch-icon.png" | relURL }}">
+  {{ if site.Params.beta }}<meta name="robots" content="noindex, nofollow">{{ end }}
 </head>

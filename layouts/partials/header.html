@@ -1,3 +1,8 @@
+{{ if site.Params.beta }}
+<div class="beta-banner text-center small py-1 px-2" style="background:#fff3cd;color:#5c4400;position:fixed;left:0;right:0;bottom:0;z-index:1100;box-shadow:0 -2px 6px rgba(0,0,0,.15)">
+  Versiune beta în lucru. Site-ul oficial al școlii: <a href="https://scboldu.wixsite.com/my-site" style="color:#5c4400;text-decoration:underline">scboldu.wixsite.com/my-site</a>
+</div>
+{{ end }}
 <!-- header -->
 <header class="fixed-top header">
   <!-- top header -->
@@ -29,7 +34,7 @@
     <div class="container">
       <nav class="navbar navbar-expand-lg navbar-dark p-0">
         <a class="navbar-brand" href="{{ site.BaseURL | relLangURL }}">
-          {{ with resources.Get site.Params.logo }}<img src="{{ .RelPermalink }}" alt="{{ site.Title }}" width="300" height="56">{{ end }}
+          {{ with resources.Get site.Params.logo }}<img src="{{ .RelPermalink }}" alt="{{ site.Title }}" width="308" height="56">{{ end }}
         </a>
         <button class="navbar-toggler rounded-0" type="button" data-toggle="collapse" data-target="#navigation"
           aria-controls="navigation" aria-expanded="false" aria-label="Toggle navigation">

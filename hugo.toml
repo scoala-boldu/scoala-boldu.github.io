@@ -42,6 +42,8 @@ quality = 80
 home = ["HTML", "RSS"]
 
 [params]
+# beta = true: bandă „Versiune beta” + site ascuns de motoarele de căutare (noindex). Se pune false la mutarea pe scoalaboldu.ro.
+beta = true
 logo = "images/logo.svg"
 description = "Școala Gimnazială Boldu, județul Buzău: anunțuri, activități, proiecte Erasmus+ și documente publice."
 author = "Școala Gimnazială Boldu"
