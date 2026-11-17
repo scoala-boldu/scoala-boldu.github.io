@@ -12,4 +12,4 @@ Conținutul se editează din **Pages CMS** (https://app.pagescms.org), nu direct
 
 Aspectul: `layouts/`, `assets/scss/_custom.scss`, `assets/scss/_variables.scss` (culori).
 
-Publicare: la fiecare salvare pe ramura `main`, GitHub Actions (`.github/workflows/hugo.yml`) construiește și publică site-ul. Previzualizarea curentă: https://scoalaboldu.github.io/nou/
+Publicare: la fiecare salvare pe ramura `main`, GitHub Actions (`.github/workflows/hugo.yml`) construiește și publică site-ul. Adresa site-ului: https://scoala-boldu.github.io
