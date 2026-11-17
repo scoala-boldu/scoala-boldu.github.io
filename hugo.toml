@@ -131,8 +131,5 @@ url = "documente/"
 name = "Evaluarea Națională"
 url = "documente/#evaluare"
 [[menu.footer]]
-name = "Manual pentru editori"
-url = "manual/"
-[[menu.footer]]
 name = "Facebook"
 url = "https://www.facebook.com/ScoalaBoldu"
