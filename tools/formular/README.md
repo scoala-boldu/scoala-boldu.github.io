@@ -1,6 +1,6 @@
 # Formularul „Activitate pentru site”
 
-- Formular (doar conturi @scoalaboldu.ro): https://docs.google.com/forms/d/e/1FAIpQLSdwc12cbLrizsCxX0mFPfklYkzzvGjvcIkZjwWSqGShpHNZBA/viewform
+- Formular (orice cont Google cu link-ul; e-mailul celui care trimite se înregistrează): https://docs.google.com/forms/d/e/1FAIpQLSdwc12cbLrizsCxX0mFPfklYkzzvGjvcIkZjwWSqGShpHNZBA/viewform
 - Răspunsuri (foaie): https://docs.google.com/spreadsheets/d/13HvMycTP1uyq1FFr8VreXV8tOrz_ZNyIlPVn1TifbPk/edit
 - Poze încărcate (folder Drive, proprietar admin@scoalaboldu.ro, partajat cu negraru.sorin@gmail.com):
   https://drive.google.com/drive/folders/1GZCPT_G3kRQnt39gTIjmeCzctAoqX6PQ4TxSGlCYhU3XbpZaEGyeqf2uAoa5RAdEv8tJarVT
