@@ -14,6 +14,7 @@ content/activitati/excursie-vatra-dornei-2024.md
 content/activitati/francofonie-2025.md
 content/activitati/francofonie-2026.md
 content/activitati/halloween-2025.md
+content/activitati/impreuna-reusim-2026.md
 content/activitati/juniorii-reciclarii-2025.md
 content/activitati/lapte-fructe-legume-2024.md
 content/activitati/lectura-si-traditii-2026.md
