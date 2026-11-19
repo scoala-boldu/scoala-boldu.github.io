@@ -31,7 +31,7 @@ jobs:
       - run: pip install requests pyyaml pillow
       - name: Postează activitățile noi
         env:
-          FB_PAGE_ID: ${{ secrets.FB_PAGE_ID }}
+          FB_PAGE_ID: '1558784041095565'
           FB_PAGE_TOKEN: ${{ secrets.FB_PAGE_TOKEN }}
           DRY_RUN: ${{ github.event_name == 'workflow_dispatch' && inputs.proba && '1' || '0' }}
         run: python3 tools/facebook/posteaza.py
