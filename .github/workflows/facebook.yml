@@ -1,0 +1,44 @@
+# După fiecare publicare reușită a site-ului, postează pe pagina de Facebook a școlii
+# activitățile NOI (Activități și Erasmus+). Documentele, avizierul și proiectele nu se postează.
+name: Postare Facebook
+on:
+  workflow_run:
+    workflows: ["Publicare site"]
+    types: [completed]
+    branches: [main]
+  workflow_dispatch:
+    inputs:
+      proba:
+        description: "Doar probă (nu publică nimic)"
+        type: boolean
+        default: true
+permissions:
+  contents: write
+concurrency:
+  group: facebook
+  cancel-in-progress: false
+jobs:
+  posteaza:
+    if: ${{ github.event_name == 'workflow_dispatch' || github.event.workflow_run.conclusion == 'success' }}
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          ref: main
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - run: pip install requests pyyaml pillow
+      - name: Postează activitățile noi
+        env:
+          FB_PAGE_ID: ${{ secrets.FB_PAGE_ID }}
+          FB_PAGE_TOKEN: ${{ secrets.FB_PAGE_TOKEN }}
+          DRY_RUN: ${{ github.event_name == 'workflow_dispatch' && inputs.proba && '1' || '0' }}
+        run: python3 tools/facebook/posteaza.py
+      - name: Salvează lista postărilor
+        if: always()
+        run: |
+          git config user.name "site-bot"
+          git config user.email "site-bot@users.noreply.github.com"
+          git add tools/facebook/postate.txt
+          git diff --cached --quiet || (git commit -m "Facebook: listă postări actualizată [skip ci]" && git push)
