@@ -6,7 +6,10 @@
   <meta name="description" content="{{ $desc }}">
   <meta property="og:title" content="{{ if .IsHome }}{{ site.Title }}{{ else }}{{ .Title }}{{ end }}">
   <meta property="og:description" content="{{ $desc }}">
-  <meta property="og:type" content="website">
+  <meta property="og:type" content="{{ if .IsPage }}article{{ else }}website{{ end }}">
+  <meta property="og:locale" content="ro_RO">
+  <meta property="og:site_name" content="{{ site.Title }}">
+  <meta name="twitter:card" content="summary_large_image">
   <meta property="og:url" content="{{ .Permalink }}">
   {{ $og := .Params.image | default "images/scoala.webp" }}
   {{ with resources.Get $og }}{{ with .Resize "1200x webp q80" }}<meta property="og:image" content="{{ .Permalink }}">{{ end }}{{ end }}
@@ -19,5 +22,8 @@
   <link rel="stylesheet" href="{{ $styles.RelPermalink }}" integrity="{{ $styles.Data.Integrity }}" media="screen">
   <link rel="icon" href="{{ "favicon-64.png" | relURL }}" type="image/png">
   <link rel="apple-touch-icon" href="{{ "apple-touch-icon.png" | relURL }}">
-  {{ if site.Params.beta }}<meta name="robots" content="noindex, nofollow">{{ end }}
+  {{ if site.Params.beta }}<meta name="robots" content="noindex, nofollow">{{ else }}<meta name="robots" content="index, follow, max-image-preview:large">{{ end }}
+  {{ with .OutputFormats.Get "rss" }}<link rel="alternate" type="application/rss+xml" title="{{ site.Title }}" href="{{ .Permalink }}">{{ end }}
+  {{ if .IsHome }}<script type="application/ld+json">{"@context":"https://schema.org","@type":"School","name":"Școala Gimnazială Boldu","alternateName":"Școala Boldu","url":"{{ site.BaseURL }}","logo":"{{ "sigla/sigla-boldu.png" | absURL }}","email":"{{ site.Params.email }}","telephone":"{{ site.Params.mobile }}","address":{"@type":"PostalAddress","streetAddress":"Strada Principală","addressLocality":"Boldu","addressRegion":"Buzău","postalCode":"127070","addressCountry":"RO"},"sameAs":["https://www.facebook.com/ScoalaBoldu"]}</script>{{ end }}
+  {{ if .IsPage }}<script type="application/ld+json">{"@context":"https://schema.org","@type":"Article","headline":{{ .Title | jsonify }},"datePublished":"{{ .Date.Format "2006-01-02" }}","inLanguage":"ro","publisher":{"@type":"School","name":"Școala Gimnazială Boldu","logo":{"@type":"ImageObject","url":"{{ "sigla/sigla-boldu.png" | absURL }}"}},"mainEntityOfPage":"{{ .Permalink }}"}</script>{{ end }}
 </head>

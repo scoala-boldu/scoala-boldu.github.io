@@ -6,6 +6,11 @@ defaultContentLanguage = "ro"
 enableEmoji = false
 summaryLength = 25
 timeZone = "Europe/Bucharest"
+enableRobotsTXT = true
+
+[sitemap]
+changeFreq = "weekly"
+priority = 0.5
 
 [pagination]
 pagerSize = 9
@@ -42,8 +47,8 @@ quality = 80
 home = ["HTML", "RSS"]
 
 [params]
-# beta = true: bandă „Versiune beta” + site ascuns de motoarele de căutare (noindex). Se pune false la mutarea pe scoalaboldu.ro.
-beta = true
+# beta = true: bandă „Versiune beta” + site ascuns de motoarele de căutare (noindex). Oprit la 19.11.2026 (site oficial).
+beta = false
 logo = "images/logo.svg"
 description = "Școala Gimnazială Boldu, județul Buzău: anunțuri, activități, proiecte Erasmus+ și documente publice."
 author = "Școala Gimnazială Boldu"
